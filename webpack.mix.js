@@ -12,6 +12,8 @@ const mix = require('laravel-mix');
  */
 
 mix.js('resources/js/app.js', 'public/js')
+    .js('resources/js/Dashboard.js','public/Dashboard/dist/js')
     .sass('resources/css/app.scss', 'public/css', [
         //
     ]);
+

@@ -1,4 +1,4 @@
-@extends('layout.index')
+@extends('Layout.index')
 @section('title','Bec')
 @section('content')
 <h1>Hello, world!</h1>

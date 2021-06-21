@@ -16,3 +16,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'Landingpages\IndexController@index')->name('Landingpages.index');
 Route::get('/login','Auth\LoginController@index')->name('login.index');
 Route::post('/login','Auth\LoginController@index')->name('login.submit');
+Route::view('/admin','Dashboard.index')->name('Dashboard.index');
+
