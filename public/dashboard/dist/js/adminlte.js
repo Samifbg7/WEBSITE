@@ -418,17 +418,17 @@
   var CLASS_NAME_CONTROL_SIDEBAR_ANIMATE = 'control-sidebar-animate';
   var CLASS_NAME_CONTROL_SIDEBAR_OPEN$1 = 'control-sidebar-open';
   var CLASS_NAME_CONTROL_SIDEBAR_SLIDE = 'control-sidebar-slide-open';
-  var CLASS_NAME_LAYOUT_FIXED$1 = 'Layout-fixed';
-  var CLASS_NAME_NAVBAR_FIXED = 'Layout-navbar-fixed';
-  var CLASS_NAME_NAVBAR_SM_FIXED = 'Layout-sm-navbar-fixed';
-  var CLASS_NAME_NAVBAR_MD_FIXED = 'Layout-md-navbar-fixed';
-  var CLASS_NAME_NAVBAR_LG_FIXED = 'Layout-lg-navbar-fixed';
-  var CLASS_NAME_NAVBAR_XL_FIXED = 'Layout-xl-navbar-fixed';
-  var CLASS_NAME_FOOTER_FIXED = 'Layout-footer-fixed';
-  var CLASS_NAME_FOOTER_SM_FIXED = 'Layout-sm-footer-fixed';
-  var CLASS_NAME_FOOTER_MD_FIXED = 'Layout-md-footer-fixed';
-  var CLASS_NAME_FOOTER_LG_FIXED = 'Layout-lg-footer-fixed';
-  var CLASS_NAME_FOOTER_XL_FIXED = 'Layout-xl-footer-fixed';
+  var CLASS_NAME_LAYOUT_FIXED$1 = 'layouts-fixed';
+  var CLASS_NAME_NAVBAR_FIXED = 'layouts-navbar-fixed';
+  var CLASS_NAME_NAVBAR_SM_FIXED = 'layouts-sm-navbar-fixed';
+  var CLASS_NAME_NAVBAR_MD_FIXED = 'layouts-md-navbar-fixed';
+  var CLASS_NAME_NAVBAR_LG_FIXED = 'layouts-lg-navbar-fixed';
+  var CLASS_NAME_NAVBAR_XL_FIXED = 'layouts-xl-navbar-fixed';
+  var CLASS_NAME_FOOTER_FIXED = 'layouts-footer-fixed';
+  var CLASS_NAME_FOOTER_SM_FIXED = 'layouts-sm-footer-fixed';
+  var CLASS_NAME_FOOTER_MD_FIXED = 'layouts-md-footer-fixed';
+  var CLASS_NAME_FOOTER_LG_FIXED = 'layouts-lg-footer-fixed';
+  var CLASS_NAME_FOOTER_XL_FIXED = 'layouts-xl-footer-fixed';
   var Default$a = {
     controlsidebarSlide: true,
     scrollbarTheme: 'os-theme-light',
@@ -1584,7 +1584,7 @@
 
   /**
    * --------------------------------------------
-   * AdminLTE Layout.js
+   * AdminLTE layouts.js
    * License MIT
    * --------------------------------------------
    */
@@ -1594,7 +1594,7 @@
    */
 
   var NAME$6 = 'Layout';
-  var DATA_KEY$6 = 'lte.Layout';
+  var DATA_KEY$6 = 'lte.layouts';
   var JQUERY_NO_CONFLICT$6 = $__default['default'].fn[NAME$6];
   var SELECTOR_HEADER = '.main-header';
   var SELECTOR_MAIN_SIDEBAR = '.main-sidebar';
@@ -1609,7 +1609,7 @@
   var SELECTOR_PRELOADER = '.preloader';
   var CLASS_NAME_SIDEBAR_COLLAPSED$1 = 'sidebar-collapse';
   var CLASS_NAME_SIDEBAR_FOCUSED = 'sidebar-focused';
-  var CLASS_NAME_LAYOUT_FIXED = 'Layout-fixed';
+  var CLASS_NAME_LAYOUT_FIXED = 'layouts-fixed';
   var CLASS_NAME_CONTROL_SIDEBAR_SLIDE_OPEN = 'control-sidebar-slide-open';
   var CLASS_NAME_CONTROL_SIDEBAR_OPEN = 'control-sidebar-open';
   var Default$6 = {
@@ -1716,7 +1716,7 @@
     _proto._init = function _init() {
       var _this = this;
 
-      // Activate Layout height watcher
+      // Activate layouts height watcher
       this.fixLayoutHeight();
 
       if (this._config.loginRegisterAutoHeight === true) {

@@ -143,7 +143,7 @@ var FixedColumns = function ( dt, init ) {
 
 
 		/**
-		 * Is the document Layout right-to-left
+		 * Is the document layouts right-to-left
 		 * @type boolean
 		 */
 		rtl: $(dtSettings.nTable).css('direction') === 'rtl'
@@ -347,7 +347,7 @@ $.extend( FixedColumns.prototype , {
 	 *      } );
 	 *      var fc = new $.fn.dataTable.fixedColumns( table );
 	 *
-	 *      // Resize the table container and then have FixedColumns adjust its Layout....
+	 *      // Resize the table container and then have FixedColumns adjust its layouts....
 	 *      $('#content').width( 1200 );
 	 *      fc.fnRedrawLayout();
 	 */
@@ -510,7 +510,7 @@ $.extend( FixedColumns.prototype , {
 		this.dom.grid.dt = $(this.s.dt.nTable).parents('div.'+classes.sScrollWrapper)[0];
 		this.dom.scroller = $('div.'+classes.sScrollBody, this.dom.grid.dt )[0];
 
-		/* Set up the DOM that we want for the fixed column Layout grid */
+		/* Set up the DOM that we want for the fixed column layouts grid */
 		this._fnColCalc();
 		this._fnGridSetup();
 
@@ -693,7 +693,7 @@ $.extend( FixedColumns.prototype , {
 
 
 	/**
-	 * Calculate the column widths for the grid Layout
+	 * Calculate the column widths for the grid layouts
 	 *  @returns {void}
 	 *  @private
 	 */
@@ -759,7 +759,7 @@ $.extend( FixedColumns.prototype , {
 
 
 	/**
-	 * Set up the DOM for the fixed column. The way the Layout works is to create a 1x3 grid
+	 * Set up the DOM for the fixed column. The way the layouts works is to create a 1x3 grid
 	 * for the left column, the DataTable (for which we just reuse the scrolling element DataTable
 	 * puts into the DOM) and the right column. In each of he two fixed column elements there is a
 	 * grouping wrapper element and then a head, body and footer wrapper. In each of these we then
@@ -862,7 +862,7 @@ $.extend( FixedColumns.prototype , {
 
 
 	/**
-	 * Style and position the grid used for the FixedColumns Layout
+	 * Style and position the grid used for the FixedColumns layouts
 	 *  @returns {void}
 	 *  @private
 	 */
@@ -1075,10 +1075,10 @@ $.extend( FixedColumns.prototype , {
 
 
 	/**
-	 * Make a copy of the Layout object for a header or footer element from DataTables. Note that
-	 * this method will clone the nodes in the Layout object.
-	 *  @returns {Array} Copy of the Layout array
-	 *  @param   {Object} aoOriginal Layout array from DataTables (aoHeader or aoFooter)
+	 * Make a copy of the layouts object for a header or footer element from DataTables. Note that
+	 * this method will clone the nodes in the layouts object.
+	 *  @returns {Array} Copy of the layouts array
+	 *  @param   {Object} aoOriginal layouts array from DataTables (aoHeader or aoFooter)
 	 *  @param   {Object} aiColumns Columns to copy
 	 *  @param   {boolean} events Copy cell events or not
 	 *  @private
@@ -1158,7 +1158,7 @@ $.extend( FixedColumns.prototype , {
 			oClone.header.style.width = "100%";
 			oGrid.head.appendChild( oClone.header );
 
-			/* Copy the DataTables Layout cache for the header for our floating column */
+			/* Copy the DataTables layouts cache for the header for our floating column */
 			aoCloneLayout = this._fnCopyLayout( dt.aoHeader, aiColumns, true );
 			jqCloneThead = $('>thead', oClone.header);
 			jqCloneThead.empty();
@@ -1178,7 +1178,7 @@ $.extend( FixedColumns.prototype , {
 		{
 			/* To ensure that we copy cell classes exactly, regardless of colspan, multiple rows
 			 * etc, we make a copy of the header from the DataTable again, but don't insert the
-			 * cloned cells, just copy the classes across. To get the matching Layout for the
+			 * cloned cells, just copy the classes across. To get the matching layouts for the
 			 * fixed component, we use the DataTables _fnDetectHeader method, allowing 1:1 mapping
 			 */
 			aoCloneLayout = this._fnCopyLayout( dt.aoHeader, aiColumns, false );

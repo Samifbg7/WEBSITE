@@ -15,17 +15,17 @@ class UserController extends Controller
      */
     public function index()
     {
-        return view('Dashboard.users.index');
+            return view('dashboard.Users.index');
     }
 
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
     public function create()
     {
-        //
+       return view('dashboard.Users.create');
     }
 
     /**
@@ -36,7 +36,19 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'fname'=>'required',
+            'lname' => 'required',
+            'email' => 'required|email|unique:users',
+
+        ],[
+            'fname.required'=>'Le nom est requis',
+            'lname.required'=>'Le prénom est requis',
+            'email.required' => "L'adresse mail est requis",
+            'email.email' => "L'adresse mail doit etre une adresse mail valide",
+            'email.unique' => "Un utilisateur avec cette adresse mail est deja enregistrer",
+        ]);
+
     }
 
     /**

@@ -477,7 +477,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
  // Returns the composite rect of an element relative to its offsetParent.
-// Composite means it takes into account transforms as well as Layout.
+// Composite means it takes into account transforms as well as layouts.
 
 function getCompositeRect(elementOrVirtualElement, offsetParent, isFixed) {
   if (isFixed === void 0) {
@@ -641,7 +641,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (/* binding */ getLayoutRect)
 /* harmony export */ });
 /* harmony import */ var _getBoundingClientRect_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./getBoundingClientRect.js */ "./node_modules/@popperjs/core/lib/dom-utils/getBoundingClientRect.js");
- // Returns the Layout rect of an element relative to its offsetParent. Layout
+ // Returns the layouts rect of an element relative to its offsetParent. layouts
 // means it doesn't take into account transforms.
 
 function getLayoutRect(element) {
@@ -901,7 +901,7 @@ function getViewportRect(element) {
 
   if (visualViewport) {
     width = visualViewport.width;
-    height = visualViewport.height; // Uses Layout Viewport (like Chrome; Safari does not currently)
+    height = visualViewport.height; // Uses layouts Viewport (like Chrome; Safari does not currently)
     // In Chrome, it returns a value very close to 0 (+/-) but contains rounding
     // errors due to floating point numbers, so we need to check precision.
     // Safari returns a number <= 0, usually < -1 when pinch-zoomed

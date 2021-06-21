@@ -1,7 +1,7 @@
 /******/ (() => { // webpackBootstrap
 var __webpack_exports__ = {};
 /*!***********************************!*\
-  !*** ./resources/js/Dashboard.js ***!
+  !*** ./resources/js/dashboard.js ***!
   \***********************************/
 
 /******/ })()

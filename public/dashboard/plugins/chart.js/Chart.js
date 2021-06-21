@@ -7076,7 +7076,7 @@ function updateDims(chartArea, params, layout) {
 	var newWidth, newHeight;
 
 	if (layout.size) {
-		// this Layout was already counted for, lets first reduce old size
+		// this layouts was already counted for, lets first reduce old size
 		chartArea[layout.pos] -= layout.size;
 	}
 	layout.size = layout.horizontal ? box.height : box.width;
@@ -7097,7 +7097,7 @@ function updateDims(chartArea, params, layout) {
 		chartArea.w = newWidth;
 		chartArea.h = newHeight;
 
-		// return true if chart area changed in Layout's direction
+		// return true if chart area changed in layouts's direction
 		var sizes = layout.horizontal ? [newWidth, chartArea.w] : [newHeight, chartArea.h];
 		return sizes[0] !== sizes[1] && (!isNaN(sizes[0]) || !isNaN(sizes[1]));
 	}
@@ -7205,30 +7205,30 @@ core_defaults._set('global', {
 
 /**
  * @interface ILayoutItem
- * @prop {string} position - The position of the item in the chart Layout. Possible values are
+ * @prop {string} position - The position of the item in the chart layouts. Possible values are
  * 'left', 'top', 'right', 'bottom', and 'chartArea'
  * @prop {number} weight - The weight used to sort the item. Higher weights are further away from the chart area
  * @prop {boolean} fullWidth - if true, and the item is horizontal, then push vertical boxes down
- * @prop {function} isHorizontal - returns true if the Layout item is horizontal (ie. top or bottom)
+ * @prop {function} isHorizontal - returns true if the layouts item is horizontal (ie. top or bottom)
  * @prop {function} update - Takes two parameters: width and height. Returns size of item
  * @prop {function} getPadding -  Returns an object with padding on the edges
  * @prop {number} width - Width of item. Must be valid after update()
  * @prop {number} height - Height of item. Must be valid after update()
- * @prop {number} left - Left edge of the item. Set by Layout system and cannot be used in update
- * @prop {number} top - Top edge of the item. Set by Layout system and cannot be used in update
- * @prop {number} right - Right edge of the item. Set by Layout system and cannot be used in update
- * @prop {number} bottom - Bottom edge of the item. Set by Layout system and cannot be used in update
+ * @prop {number} left - Left edge of the item. Set by layouts system and cannot be used in update
+ * @prop {number} top - Top edge of the item. Set by layouts system and cannot be used in update
+ * @prop {number} right - Right edge of the item. Set by layouts system and cannot be used in update
+ * @prop {number} bottom - Bottom edge of the item. Set by layouts system and cannot be used in update
  */
 
-// The Layout service is very self explanatory.  It's responsible for the Layout within a chart.
-// Scales, Legends and Plugins all rely on the Layout service and can easily register to be placed anywhere they need
-// It is this service's responsibility of carrying out that Layout.
+// The layouts service is very self explanatory.  It's responsible for the layouts within a chart.
+// Scales, Legends and Plugins all rely on the layouts service and can easily register to be placed anywhere they need
+// It is this service's responsibility of carrying out that layouts.
 var core_layouts = {
 	defaults: {},
 
 	/**
 	 * Register a box to a chart.
-	 * A box is simply a reference to an object that requires Layout. eg. Scales, Legend, Title.
+	 * A box is simply a reference to an object that requires layouts. eg. Scales, Legend, Title.
 	 * @param {Chart} chart - the chart to use
 	 * @param {ILayoutItem} item - the item to add to be layed out
 	 */
@@ -7256,7 +7256,7 @@ var core_layouts = {
 	/**
 	 * Remove a layoutItem from a chart
 	 * @param {Chart} chart - the chart to remove the box from
-	 * @param {ILayoutItem} layoutItem - the item to remove from the Layout
+	 * @param {ILayoutItem} layoutItem - the item to remove from the layouts
 	 */
 	removeBox: function(chart, layoutItem) {
 		var index = chart.boxes ? chart.boxes.indexOf(layoutItem) : -1;
@@ -9683,7 +9683,7 @@ helpers$1.extend(Chart.prototype, /** @lends Chart */ {
 	},
 
 	/**
-	 * Updates the chart Layout unless a plugin returns `false` to the `beforeLayout`
+	 * Updates the chart layouts unless a plugin returns `false` to the `beforeLayout`
 	 * hook, in which case, plugins will not be called on `afterLayout`.
 	 * @private
 	 */
@@ -11586,7 +11586,7 @@ var Scale = core_element.extend({
 
 		me.afterUpdate();
 
-		// TODO(v3): remove minSize as a public property and return value from all Layout boxes. It is unused
+		// TODO(v3): remove minSize as a public property and return value from all layouts boxes. It is unused
 		// make maxWidth and maxHeight private
 		return me.minSize;
 	},

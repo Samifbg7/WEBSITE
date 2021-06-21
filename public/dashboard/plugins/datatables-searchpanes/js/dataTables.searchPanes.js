@@ -567,7 +567,7 @@
             });
         };
         /**
-         * Adjusts the Layout of the top row when the screen is resized
+         * Adjusts the layouts of the top row when the screen is resized
          */
         SearchPane.prototype._adjustTopRow = function () {
             var subContainers = this.dom.container.find('.' + this.classes.subRowsContainer);
@@ -2615,7 +2615,7 @@
             cFeature: 'P',
             fnInit: _init
         });
-        // DataTables 2 Layout feature
+        // DataTables 2 layouts feature
         if (DataTable.ext.features) {
             DataTable.ext.features.register('searchPanes', _init);
         }

@@ -4367,7 +4367,7 @@
 	        cFeature: 'Q',
 	        fnInit: _init
 	    });
-	    // DataTables 2 Layout feature
+	    // DataTables 2 layouts feature
 	    if (DataTable.ext.features) {
 	        DataTable.ext.features.register('searchBuilder', _init);
 	    }

@@ -727,7 +727,7 @@ $.extend( Scroller.prototype, {
 				setTimeout( function () {
 					$(that.dom.scroller).scrollTop( that.s.dt.oLoadedState.scroller.scrollTop );
 
-					// In order to prevent Layout thrashing we need another
+					// In order to prevent layouts thrashing we need another
 					// small delay
 					setTimeout( function () {
 						that.s.ingnoreScroll = false;

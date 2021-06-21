@@ -22806,7 +22806,7 @@ function PdfPrinter(fontDescriptors) {
 }
 
 /**
- * Executes Layout engine for the specified document and renders it into a pdfkit document
+ * Executes layouts engine for the specified document and renders it into a pdfkit document
  * ready to be saved.
  *
  * @param {Object} docDefinition document definition
@@ -45241,7 +45241,7 @@ function direction(script) {
 
 /**
  * Represents a run of Glyph and GlyphPosition objects.
- * Returned by the font Layout method.
+ * Returned by the font layouts method.
  */
 
 var GlyphRun = function () {
@@ -50740,7 +50740,7 @@ var LayoutEngine = function () {
     this.unicodeLayoutEngine = null;
     this.kernProcessor = null;
 
-    // Choose an advanced Layout engine. We try the AAT morx table first since more
+    // Choose an advanced layouts engine. We try the AAT morx table first since more
     // scripts are currently supported because the shaping logic is built into the font.
     if (this.font.morx) {
       this.engine = new AATLayoutEngine(this.font);
@@ -50801,7 +50801,7 @@ var LayoutEngine = function () {
       return glyphRun;
     }
 
-    // Setup the advanced Layout engine
+    // Setup the advanced layouts engine
     if (this.engine && this.engine.setup) {
       this.engine.setup(glyphRun);
     }
@@ -50812,7 +50812,7 @@ var LayoutEngine = function () {
 
     this.hideDefaultIgnorables(glyphRun.glyphs, glyphRun.positions);
 
-    // Let the Layout engine clean up any state it might have
+    // Let the layouts engine clean up any state it might have
     if (this.engine && this.engine.cleanup) {
       this.engine.cleanup();
     }
@@ -50821,7 +50821,7 @@ var LayoutEngine = function () {
   };
 
   LayoutEngine.prototype.substitute = function substitute(glyphRun) {
-    // Call the advanced Layout engine to make substitutions
+    // Call the advanced layouts engine to make substitutions
     if (this.engine && this.engine.substitute) {
       this.engine.substitute(glyphRun);
     }
@@ -50834,7 +50834,7 @@ var LayoutEngine = function () {
     });
     var positioned = null;
 
-    // Call the advanced Layout engine. Returns the features applied.
+    // Call the advanced layouts engine. Returns the features applied.
     if (this.engine && this.engine.position) {
       positioned = this.engine.position(glyphRun);
     }
@@ -54074,7 +54074,7 @@ var TTFFont = (_class = function () {
   /**
    * Returns an array of Glyph objects for the given string.
    * This is only a one-to-one mapping from characters to glyphs.
-   * For most uses, you should use font.Layout (described below), which
+   * For most uses, you should use font.layouts (described below), which
    * provides a much more advanced mapping supporting AAT and OpenType shaping.
    *
    * @param {string} string
@@ -65199,7 +65199,7 @@ function addAll(target, otherArray) {
 }
 
 /**
- * Creates an instance of LayoutBuilder - Layout engine which turns document-definition-object
+ * Creates an instance of LayoutBuilder - layouts engine which turns document-definition-object
  * into a set of pages, lines, inlines and vectors ready to be rendered into a PDF
  *
  * @param {Object} pageSize - an object defining page width and height
@@ -65219,7 +65219,7 @@ LayoutBuilder.prototype.registerTableLayouts = function (tableLayouts) {
 };
 
 /**
- * Executes Layout engine on document-definition-object and creates an array of pages
+ * Executes layouts engine on document-definition-object and creates an array of pages
  * containing positioned Blocks, Lines and inlines
  *
  * @param {Object} docStructure document-definition-object
@@ -66277,7 +66277,7 @@ function DocMeasure(fontProvider, styleDictionary, defaultStyle, imageMeasure, s
 
 /**
  * Measures all nodes and sets min/max-width properties required for the second
- * Layout-pass.
+ * layouts-pass.
  * @param  {Object} docStructure document-definition-object
  * @return {Object}              document-measurement-object
  */

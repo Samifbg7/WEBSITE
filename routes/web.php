@@ -13,8 +13,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'Landingpages\IndexController@index')->name('Landingpages.index');
+Route::get('/', 'Landingpage\IndexController@index')->name('landingpage.index');
 Route::get('/login','Auth\LoginController@index')->name('login.index');
 Route::post('/login','Auth\LoginController@index')->name('login.submit');
-Route::view('/admin','Dashboard.index')->name('Dashboard.index');
+
+Route::prefix('admin')->name('dashboard.')->group(function (){
+    Route::get('/','Dashboard\IndexController@index')->name('index');
+    //user route
+    Route::prefix('user')->name('user.')->group(function (){
+        Route::get('/','Dashboard\Users\UserController@index')->name('index');
+        Route::get('/create','Dashboard\Users\UserController@create')->name('create');
+        Route::post('/store','Dashboard\Users\UserController@store')->name('store');
+    });
+});
+
+
 

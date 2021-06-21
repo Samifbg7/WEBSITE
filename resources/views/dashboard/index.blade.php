@@ -1,8 +1,8 @@
-@extends('Layout.dashboard')
-@section('title','Bec | Dashboard')
-@section('content')
-    <!-- Content Wrapper. Contains page content -->
-    <div class="content-wrapper">
+@extends('layouts.dashboard')
+@section('title','Bec | dashboard')
+@section('page-header')
+
+
         <!-- Content Header (Page header) -->
         <div class="content-header">
             <div class="container-fluid">
@@ -20,9 +20,9 @@
             </div><!-- /.container-fluid -->
         </div>
         <!-- /.content-header -->
+    @endsection
+        @section('page-content')
 
-        <!-- Main content -->
-        <section class="content">
             <div class="container-fluid">
                 <!-- Small boxes (Stat box) -->
                 <div class="row">
@@ -154,7 +154,7 @@
                                             <span class="direct-chat-timestamp float-right">23 Jan 2:00 pm</span>
                                         </div>
                                         <!-- /.direct-chat-infos -->
-                                        <img class="direct-chat-img" src="{{asset('Dashboard/dist/img/user1-128x128.jpg')}}" alt="message user image">
+                                        <img class="direct-chat-img" src="{{asset('dashboard/dist/img/user1-128x128.jpg')}}" alt="message user image">
                                         <!-- /.direct-chat-img -->
                                         <div class="direct-chat-text">
                                             Is this template really for free? That's unbelievable!
@@ -170,7 +170,7 @@
                                             <span class="direct-chat-timestamp float-left">23 Jan 2:05 pm</span>
                                         </div>
                                         <!-- /.direct-chat-infos -->
-                                        <img class="direct-chat-img" src="{{asset('Dashboard/dist/img/user3-128x128.jpg')}}" alt="message user image">
+                                        <img class="direct-chat-img" src="{{asset('dashboard/dist/img/user3-128x128.jpg')}}" alt="message user image">
                                         <!-- /.direct-chat-img -->
                                         <div class="direct-chat-text">
                                             You better believe it!
@@ -186,7 +186,7 @@
                                             <span class="direct-chat-timestamp float-right">23 Jan 5:37 pm</span>
                                         </div>
                                         <!-- /.direct-chat-infos -->
-                                        <img class="direct-chat-img" src="{{asset('Dashboard/dist/img/user1-128x128.jpg')}}" alt="message user image">
+                                        <img class="direct-chat-img" src="{{asset('dashboard/dist/img/user1-128x128.jpg')}}" alt="message user image">
                                         <!-- /.direct-chat-img -->
                                         <div class="direct-chat-text">
                                             Working with AdminLTE on a great new app! Wanna join?
@@ -202,7 +202,7 @@
                                             <span class="direct-chat-timestamp float-left">23 Jan 6:10 pm</span>
                                         </div>
                                         <!-- /.direct-chat-infos -->
-                                        <img class="direct-chat-img" src="{{asset('Dashboard/dist/img/user3-128x128.jpg')}}" alt="message user image">
+                                        <img class="direct-chat-img" src="{{asset('dashboard/dist/img/user3-128x128.jpg')}}" alt="message user image">
                                         <!-- /.direct-chat-img -->
                                         <div class="direct-chat-text">
                                             I would love to.
@@ -219,7 +219,7 @@
                                     <ul class="contacts-list">
                                         <li>
                                             <a href="#">
-                                                <img class="contacts-list-img" src="{{asset('Dashboard/dist/img/user1-128x128.jpg')}}" alt="User Avatar">
+                                                <img class="contacts-list-img" src="{{asset('dashboard/dist/img/user1-128x128.jpg')}}" alt="User Avatar">
 
                                                 <div class="contacts-list-info">
                           <span class="contacts-list-name">
@@ -234,7 +234,7 @@
                                         <!-- End Contact Item -->
                                         <li>
                                             <a href="#">
-                                                <img class="contacts-list-img" src="{{asset('Dashboard/dist/img/user7-128x128.jpg')}}" alt="User Avatar">
+                                                <img class="contacts-list-img" src="{{asset('dashboard/dist/img/user7-128x128.jpg')}}" alt="User Avatar">
 
                                                 <div class="contacts-list-info">
                           <span class="contacts-list-name">
@@ -249,7 +249,7 @@
                                         <!-- End Contact Item -->
                                         <li>
                                             <a href="#">
-                                                <img class="contacts-list-img" src="{{asset('Dashboard/dist/img/user3-128x128.jpg')}}" alt="User Avatar">
+                                                <img class="contacts-list-img" src="{{asset('dashboard/dist/img/user3-128x128.jpg')}}" alt="User Avatar">
 
                                                 <div class="contacts-list-info">
                           <span class="contacts-list-name">
@@ -264,7 +264,7 @@
                                         <!-- End Contact Item -->
                                         <li>
                                             <a href="#">
-                                                <img class="contacts-list-img" src="{{asset('Dashboard/dist/img/user5-128x128.jpg')}}" alt="User Avatar">
+                                                <img class="contacts-list-img" src="{{asset('dashboard/dist/img/user5-128x128.jpg')}}" alt="User Avatar">
 
                                                 <div class="contacts-list-info">
                           <span class="contacts-list-name">
@@ -279,7 +279,7 @@
                                         <!-- End Contact Item -->
                                         <li>
                                             <a href="#">
-                                                <img class="contacts-list-img" src="{{asset('Dashboard/dist/img/user6-128x128.jpg')}}" alt="User Avatar">
+                                                <img class="contacts-list-img" src="{{asset('dashboard/dist/img/user6-128x128.jpg')}}" alt="User Avatar">
 
                                                 <div class="contacts-list-info">
                           <span class="contacts-list-name">
@@ -294,7 +294,7 @@
                                         <!-- End Contact Item -->
                                         <li>
                                             <a href="#">
-                                                <img class="contacts-list-img" src="{{asset('Dashboard/dist/img/user8-128x128.jpg')}}" alt="User Avatar">
+                                                <img class="contacts-list-img" src="{{asset('dashboard/dist/img/user8-128x128.jpg')}}" alt="User Avatar">
 
                                                 <div class="contacts-list-info">
                           <span class="contacts-list-name">
@@ -602,23 +602,5 @@
                 </div>
                 <!-- /.row (main row) -->
             </div><!-- /.container-fluid -->
-        </section>
-        <!-- /.content -->
-    </div>
-    <!-- /.content-wrapper -->
-    <footer class="main-footer">
-        <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
-        All rights reserved.
-        <div class="float-right d-none d-sm-inline-block">
-            <b>Version</b> 3.1.0
-        </div>
-    </footer>
 
-    <!-- Control Sidebar -->
-    <aside class="control-sidebar control-sidebar-dark">
-        <!-- Control sidebar content goes here -->
-    </aside>
-    <!-- /.control-sidebar -->
-</div>
-<!-- ./wrapper -->
 @endsection

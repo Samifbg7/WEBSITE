@@ -81,7 +81,7 @@ var Buttons = function( dt, config )
 {
 	// If not created with a `new` keyword then we return a wrapper function that
 	// will take the settings object for a DT. This allows easy use of new instances
-	// with the `Layout` option - e.g. `topLeft: $.fn.dataTable.Buttons( ... )`.
+	// with the `layouts` option - e.g. `topLeft: $.fn.dataTable.Buttons( ... )`.
 	if ( !(this instanceof Buttons) ) {
 		return function (settings) {
 			return new Buttons( settings, dt ).container();
@@ -2150,7 +2150,7 @@ DataTable.ext.feature.push( {
 	cFeature: "B"
 } );
 
-// DataTables 2 Layout feature
+// DataTables 2 layouts feature
 if ( DataTable.ext.features ) {
 	DataTable.ext.features.register( 'buttons', _init );
 }

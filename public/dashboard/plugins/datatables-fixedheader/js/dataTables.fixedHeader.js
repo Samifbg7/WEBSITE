@@ -306,7 +306,7 @@ $.extend( FixedHeader.prototype, {
 			}
 
 			itemDom.floating = $( dt.table().node().cloneNode( false ) )
-				.css( 'table-Layout', 'fixed' )
+				.css( 'table-layouts', 'fixed' )
 				.attr( 'aria-hidden', 'true' )
 				.removeAttr( 'id' )
 				.append( itemElement )

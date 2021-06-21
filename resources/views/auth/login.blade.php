@@ -1,4 +1,4 @@
-@extends('Layout.index')
+@extends('layouts.index')
 
 @section('title' ,'Connexion')
 
