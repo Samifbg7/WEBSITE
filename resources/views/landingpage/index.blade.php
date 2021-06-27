@@ -1,5 +1,13 @@
 @extends('layouts.index')
 @section('title','Bec')
 @section('content')
-<h1>Hello, world!</h1>
+    @if(session()->has('success'))
+        <div class="alert alert-success">
+            {{ session()->get('success') }}
+        </div>
+    @endif
+
+<div id="app">
+
+</div>
 @endsection

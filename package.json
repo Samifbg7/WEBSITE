@@ -11,12 +11,17 @@
     },
     "devDependencies": {
         "@popperjs/core": "^2.9.2",
+        "@vue/compiler-sfc": "^3.1.2",
         "axios": "^0.21",
         "bootstrap": "^5.0.0-beta3",
         "laravel-mix": "^6.0.6",
         "lodash": "^4.17.19",
         "resolve-url-loader": "^4.0.0",
         "sass": "^1.15.2",
-        "sass-loader": "^8.0.0"
+        "sass-loader": "^8.0.0",
+        "vue-loader": "^16.2.0"
+    },
+    "dependencies": {
+        "vue": "^3.1.2"
     }
 }

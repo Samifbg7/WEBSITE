@@ -8,6 +8,7 @@
 
     <!-- Bootstrap CSS -->
     <link href="{{asset('css/app.css')}}" rel="stylesheet" >
+
     <link rel="icon" type="image/png" href="{{ asset('img/bec-logo.png') }}" />
 
    <title>@yield('title')</title>

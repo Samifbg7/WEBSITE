@@ -21,6 +21,7 @@
         </div>
         <!-- /.content-header -->
     @endsection
+
         @section('page-content')
 
             <div class="container-fluid">

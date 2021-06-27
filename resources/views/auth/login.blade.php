@@ -3,17 +3,45 @@
 @section('title' ,'Connexion')
 
 @section('content')
-<form class="row g-3" action="{{route('login.submit')}}">
-    <div class="col-auto">
-        <label for="Email">Email</label>
-        <input type="text"  class="form-control-plaintext" id="email" name="email" placeholder="email">
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <form action="{{route('login.authenticate')}} " method="Post">
+                        <div class="card-body">
+                            @include('flash.messageb5')
+
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="text" class="form-control @error('email') is-invalid @enderror" id="email" placeholder="Entrer l'email"name="email" value="{{old('email')}}">
+                                @error('email')
+                                <div class="invalid-feedback">
+                                    {{$message}}
+                                </div>
+                                @enderror
+                            </div>
+                            <div class="form-group">
+                                <label for="inputPassword2" >Password</label>
+                                <input type="password" class="form-control" id="inputPassword2" placeholder="Password" name="password" value="{{old('password')}}">
+                                @error('password')
+                                <div class="invalid-feedback">
+                                    {{$message}}
+                                </div>
+                                @enderror
+                            </div>
+
+                            @csrf
+                            <button class="btn btn-primary " type="submit"> Enregistrer </button>
+                        </div>
+                        <!-- /.card-body -->
+                    </form>
+
+                </div>
+                <!-- /.card -->
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
     </div>
-    <div class="col-auto">
-        <label for="inputPassword2" >Password</label>
-        <input type="password" class="form-control" id="inputPassword2" placeholder="Password" name="password">
-    </div>
-    <div class="col-auto">
-        <button type="submit" class="btn btn-primary mb-3">Se connecter</button>
-    </div>
-</form>
 @endsection
