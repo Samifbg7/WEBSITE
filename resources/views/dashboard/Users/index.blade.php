@@ -24,17 +24,15 @@
                     Confirmer la suppression
                 </div>
                 <div class="modal-body">
-                  Etes vous sur de vouloir supprimer l'utilisateur <span id="lname"></span> <span id="fname"></span> ?
-                    <!-- We display the details entered by the user here -->
+
 
                 </div>
 
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
                     <form  id="formfield" method="post" action="{{route('dashboard.user.delete')}}">
-                        <input id="idf" name="id" type="hidden" >
-                        <input name="idd" type="hidden" value="{{auth()->user()->id}}">
-                        @csrf
+
+
                         <button type="submit" id="submit" class="btn btn-success success">Confirmer</button>
                     </form>
                 </div>
@@ -92,20 +90,6 @@
     </div>
     <!-- /.container-fluid -->
 @endsection
-@section('sript')
-    $('#submitBtn').click(function() {
-    /* when the button in the form, display the entered values in the modal */
-    $('#lnamef').val($('#lastname').val());
-    $('#fnamef').val($('#firstname').val());
-    $('#idf').val($('#id').val());
-    $('#lname').text($('#lastname').val());
-    $('#fname').text($('#firstname').val());
-    });
 
-    $('#submit').click(function(){
-    /* when the submit button in the modal is clicked, submit the form */
-    $('#formfield').submit();
-    });
-@endsection
 
 

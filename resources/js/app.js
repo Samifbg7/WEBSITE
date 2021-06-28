@@ -2,6 +2,6 @@ require('./bootstrap');
 
 import {createApp} from "vue";
 
-import counter from './components/ExampleComponent.vue';
 
-createApp(counter).mount('#app')
+import App from './components/App.vue'
+createApp(App).mount("#app")
