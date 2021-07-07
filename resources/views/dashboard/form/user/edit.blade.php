@@ -37,7 +37,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="lname">Nom</label>
-                                <input type="text" class="form-control @error('lname') is-invalid @enderror" id="lname" placeholder="Entrer le prenom"name="lname" value="{$user->lname}} ">
+                                <input type="text" class="form-control @error('lname') is-invalid @enderror" id="lname" placeholder="Entrer le prenom"name="lname" value="{{$user->lname}} ">
                                 @error('lname')
                                 <div class="invalid-feedback">
                                     {{$message}}

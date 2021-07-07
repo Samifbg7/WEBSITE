@@ -3,9 +3,9 @@
 namespace App\Mail;
 
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
+
 
 class Delete extends Mailable
 {
@@ -16,10 +16,12 @@ class Delete extends Mailable
      *
      * @return void
      */
-    public $delete;
-    public function __construct(Array $delete)
+    public $userr;
+    public $userd;
+    public function __construct(Object $userd , Object $userr)
     {
-        $this->delete = $delete;
+        $this->userd = $userd;
+        $this->userr = $userr;
     }
 
     /**

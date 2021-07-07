@@ -17,28 +17,7 @@
 @endsection()
 
 @section('page-content')
-    <div class="modal fade" id="confirm-submit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    Confirmer la suppression
-                </div>
-                <div class="modal-body">
 
-
-                </div>
-
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
-                    <form  id="formfield" method="post" action="{{route('dashboard.user.delete')}}">
-
-
-                        <button type="submit" id="submit" class="btn btn-success success">Confirmer</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
     <div class="container-fluid">
         <div class="row">
             <div class="col-12">
@@ -62,19 +41,22 @@
                             <tbody>
                             @foreach($user as $u)
 
-                                    <td>{{$u->lname}}</td>
-                                    <td>{{$u->fname}}
-                                    </td>
-                                    <td><a href="{{route('dashboard.user.edit',['id'=>$u->id])}}"
-                                           class="btn btn-primary">Editer</a></td>
-                                    <td>
-                                        <form onsubmit="openModal()" id="formfield">
-                                            <input id="id" name="id" type="hidden" value="{{$u->id}}">
-                                            <input  id="lastname" type="hidden" value="{{$u->lname}}">
-                                            <input  id="firstname" type="hidden" value="{{$u->fname}}">
-                                            <input type="button" name="btn" value="Supprimer" id="submitBtn" data-toggle="modal" data-target="#confirm-submit" class="btn btn-danger" />
-                                        </form>
-                                    </td>
+                                <td>{{$u->lname}}</td>
+                                <td>{{$u->fname}}</td>
+                                <td><a href="{{route('dashboard.user.edit',['id'=>$u->id])}}"
+                                       class="btn btn-primary">Editer</a></td>
+                                <td>
+                                    <form action="{{ route('dashboard.user.delete') }}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <input type="hidden" name="id" value="{{$u->id}}">
+                                        <input type="hidden" name="idd" value="{{ auth()->user()->id}}">
+                                        <button type="submit" class="btn btn-danger btn-sm"
+                                                onclick="return confirm('Ete vous sur de vouloir supprimmer cette utilisateur')">
+                                            Delete
+                                        </button>
+                                    </form>
+                                </td>
                                 </tr>
                             @endforeach
                             </tbody>

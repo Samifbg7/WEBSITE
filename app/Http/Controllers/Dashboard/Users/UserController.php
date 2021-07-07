@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Dashboard\Users;
 
 use App\Http\Controllers\Controller;
 
+use App\Mail\Delete;
 use App\Mail\Register;
 use App\Models\User;
 use Facade\Ignition\DumpRecorder\Dump;
@@ -164,16 +165,25 @@ class UserController extends Controller
     {
         dump($request);
 
-        //if ($request->id == $request->idd){
-         //   return redirect(route('dashboard.user.index'))->with('error','vous pouvez pas supprimer votre propre compte');
-       // }
-        //if ($request->idd == 1){
-       //     $userd =   User::where('id', $request['id'])->get()->first();
-      //     return redirect(route('dashboard.user.index'))->with('success','vous venez de supprimer le compte de '.$userd->fname.' '.$userd->lname .'.');
-      //  }else{
-       //     return redirect(route('dashboard.user.index'))->with('error',"vous etes pas super admin");
+        if ($request->id == $request->idd){
+            return redirect(route('dashboard.user.index'))->with('error','vous pouvez pas supprimer votre propre compte');
+        }
+        if ($request->idd == 1){
+            $userd =   User::where('id', $request['id'])->get()->first();
+            $userr =   User::where('id', $request['idd'])->get()->first();
 
-      //  }
+            $lname =$userd->lname;
+            $fname=$userd->fname;
+
+
+            Mail::to($userd->email)
+                ->send(new Delete($userd , $userr ));
+            User::where('id', $request['id'])->get()->first()->delete();
+
+           return redirect(route('dashboard.user.index'))->with('success','vous venez de supprimer le compte de '.$fname.' '.$lname .'.');
+       }else{
+            return redirect(route('dashboard.user.index'))->with('error',"vous etes pas super admin");
+        }
 
     }
 

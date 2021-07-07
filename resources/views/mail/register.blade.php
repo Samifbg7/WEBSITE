@@ -4,7 +4,7 @@
     <meta charset="utf-8">
 </head>
 <body>
-<h2>Inscxrptione</h2>
+<h2>Inscription</h2>
 <p>inscrption suivante</p>
 <ul>
     <li><strong>Nom</strong> : {{ $register['lname'] }}</li>
